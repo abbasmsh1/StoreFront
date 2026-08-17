@@ -6,12 +6,18 @@ body {
   @apply bg-slate-950 text-white font-sans;
 }
 
+::selection { background: #22d3ee; color: #083344; }
+:focus-visible { outline: 2px solid #22d3ee; outline-offset: 2px; border-radius: 4px; }
+html { scrollbar-color: #334155 transparent; }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; border: 2px solid #020617; }
+
 @layer utilities {
   .card-glow {
-    @apply bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 shadow-xl hover:shadow-2xl transition-shadow;
+    @apply bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors;
   }
-  
+
   .gradient-neon {
-    @apply bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-600 bg-clip-text text-transparent;
+    @apply text-cyan-300;
   }
 }

@@ -29,24 +29,15 @@ export default function Products({ products, onAddToCart }) {
           key={product.id}
           variants={item}
           className="card-glow rounded-xl overflow-hidden group"
-          whileHover={{ y: -4 }}
         >
           <div className="relative h-64 overflow-hidden">
-            <motion.div 
-              className={`absolute inset-0 bg-gradient-to-br ${product.image}`}
-              animate={{ scale: 1 }}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.6 }}
-            />
+            <div className={`absolute inset-0 bg-gradient-to-br ${product.image} transition-transform duration-500 group-hover:scale-105`} />
             
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             
-            <motion.div 
-              className="absolute top-4 right-4 bg-slate-950/80 px-3 py-1 rounded-full backdrop-blur-sm"
-              whileHover={{ scale: 1.1 }}
-            >
-              <span className="text-yellow-400 font-semibold">${product.price}</span>
-            </motion.div>
+            <div className="absolute top-4 right-4 bg-slate-950/85 px-3 py-1 rounded-full">
+              <span className="text-white font-semibold tabular-nums">${product.price}</span>
+            </div>
           </div>
 
           <div className="p-6">
@@ -63,15 +54,13 @@ export default function Products({ products, onAddToCart }) {
               <span className="text-sm text-slate-400 ml-2">{product.rating}</span>
             </div>
 
-            <motion.button
+            <button
               onClick={() => onAddToCart(product)}
-              className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-2 rounded-lg font-semibold flex items-center justify-center gap-2 hover:shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-full bg-cyan-400 hover:bg-cyan-300 text-cyan-950 py-2.5 rounded-lg font-bold flex items-center justify-center gap-2 transition-colors active:scale-[0.98]"
             >
-              <ShoppingCart size={18} />
-              Add to Cart
-            </motion.button>
+              <ShoppingCart size={17} />
+              Add to cart
+            </button>
           </div>
         </motion.div>
       ))}

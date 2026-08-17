@@ -22,13 +22,9 @@ export default function Cart({ items, onRemove, onClose }) {
       >
         <div className="flex items-center justify-between p-6 border-b border-slate-800">
           <h2 className="text-xl font-bold">Shopping Cart</h2>
-          <motion.button 
-            onClick={onClose}
-            className="p-2 hover:bg-slate-800 rounded-lg transition-colors"
-            whileHover={{ scale: 1.1 }}
-          >
+          <button onClick={onClose} aria-label="Close cart" className="p-2 hover:bg-slate-800 rounded-lg transition-colors">
             <X size={20} />
-          </motion.button>
+          </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
@@ -62,15 +58,11 @@ export default function Cart({ items, onRemove, onClose }) {
           <div className="border-t border-slate-800 p-6 space-y-4">
             <div className="flex items-center justify-between text-lg font-bold">
               <span>Total:</span>
-              <span className="gradient-neon">${total.toFixed(2)}</span>
+              <span className="text-cyan-300 tabular-nums">${total.toFixed(2)}</span>
             </div>
-            <motion.button 
-              className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white py-3 rounded-lg font-semibold"
-              whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(34, 211, 238, 0.5)' }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <button className="w-full bg-cyan-400 hover:bg-cyan-300 text-cyan-950 py-3 rounded-lg font-bold transition-colors active:scale-[0.98]">
               Checkout
-            </motion.button>
+            </button>
           </div>
         )}
       </motion.div>
