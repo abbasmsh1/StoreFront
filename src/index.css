@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-950 text-white font-sans;
+}
+
+@layer utilities {
+  .card-glow {
+    @apply bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 shadow-xl hover:shadow-2xl transition-shadow;
+  }
+  
+  .gradient-neon {
+    @apply bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-600 bg-clip-text text-transparent;
+  }
+}
